@@ -1,2 +1,2 @@
 # dotfiles
-config files for i3
+config files for my computer
