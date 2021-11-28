@@ -21,7 +21,7 @@ exec --no-startup-id picom
 
 # take a screenshot on printscreen
 bindsym Print exec --no-startup-id scrot '$wx$h_screenshot.png' -e 'mv $f ~/Pictures/scrot'
-# bindsym Print --release exec --no-startup-id shutter -a -o '~/Pictures/Screen Shots/%Y-%m-%d_$wx$h.png'
+bindsym $mod+c exec --no-startup-id shutter
 
 # Open firefox
 bindsym $mod+g --release exec --no-startup-id firefox
@@ -29,6 +29,13 @@ bindsym $mod+g --release exec --no-startup-id firefox
 # Make shutter always float and have a minimum size and always spawn on workspace 1
 for_window [class="Shutter" instance="shutter"] floating enable
 assign [class="Shutter"] 1
+
+# Float xeyes
+for_window [class="XEyes" instance="xeyes"] floating enable
+
+# Start gnome-keyring
+exec --no-startup-id "gnome-keyring-daemon --start"
+exec --no-startup-id "export SSH_AUTH_SOCK"
 
 # Set gaps
 gaps inner 10

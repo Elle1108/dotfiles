@@ -102,10 +102,11 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias htop="sudo htop"
-alias ufw="sudo ufw"
-alias pmr="sudo pacman -Rns"
-alias pm="sudo pacman -Syu"
+alias pm="sudo pacman"
 alias colourpicker="colorpicker"
+alias apt="echo You should try pacman -S instead!"
+alias apt-get="echo You should try pacman -S instead!"
+neofetch

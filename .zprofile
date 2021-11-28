@@ -6,7 +6,7 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 fi
 
 # Start Gnome-Keyring
-if [ -n "$DESKTOP_SESSION" ];then
-	eval $(gnome-keyring-daemon --start)
-	export SSH_AUTH_SOCK
-fi
+#if [ -n "$DESKTOP_SESSION" ];then
+#	eval $(gnome-keyring-daemon --start)
+#	export SSH_AUTH_SOCK
+#fi
