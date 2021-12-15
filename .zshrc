@@ -75,6 +75,7 @@ plugins=(
 	zsh-autosuggestions
 	sudo
 	copydir
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,11 +103,13 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nano ~/.zshrc"
+alias ani="ani-cli"
+alias ifconfig="ip -br -c a"
+alias py="/bin/python"
+alias vi="vim"
+alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ufw="sudo ufw"
 alias htop="sudo htop"
 alias pm="sudo pacman"
-alias colourpicker="colorpicker"
-alias apt="echo You should try pacman -S instead!"
-alias apt-get="echo You should try pacman -S instead!"
 neofetch
