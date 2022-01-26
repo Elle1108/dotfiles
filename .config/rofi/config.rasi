@@ -3,7 +3,7 @@
 
 configuration {
   modi: "window,drun,ssh,combi";
-  font: "Terminus 15";
+  font: "Iosevka 15";
   combi-modi: "window,drun,ssh";
 }
 

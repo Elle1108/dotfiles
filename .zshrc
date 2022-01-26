@@ -103,13 +103,16 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias asdf="setxkbmap -layout us -variant dvorak-alt-intl"
+alias xcolour="xcolor"
+alias aoeu="setxkbmap -layout us"
 alias ani="ani-cli"
 alias ifconfig="ip -br -c a"
+alias execute="chmod +x"
 alias py="/bin/python"
 alias vi="vim"
 alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ufw="sudo ufw"
-alias htop="sudo htop"
 alias pm="sudo pacman"
 neofetch

@@ -10,32 +10,50 @@
 # Startup commands
 exec --no-startup-id "setxkbmap -layout us -variant dvorak-alt-intl"
 exec --no-startup-id "xset -b"
+#exec --no-startup-id "xrandr --output HDMI-1 --mode 2560x1440 --rate 144"
 exec --no-startup-id discord
-#exec --no-startup-id firefox
+exec --no-startup-id firefox
 exec --no-startup-id dunst
-#exec --no-startup-id fcitx
+exec --no-startup-id fcitx
 exec --no-startup-id "nvfancontrol -f"
 exec --no-startup-id picom
+exec --no-startup-id mattermost-desktop
+exec --no-startup-id thunderbird
+#exec --no-startup-id blugon -f
+
+# Start windows
+bindsym $mod+w exec "sudo virsh start win10"
+
+# Open fcitx
+bindsym $mod+l exec --no-startup-id fcitx
 
 # Open discord
-bindsym $mod+backslash exec --no-startup-id discord
+bindsym $mod+backslash --release exec --no-startup-id discord
 
-# take a screenshot on printscreen
-bindsym Print exec --no-startup-id scrot '$wx$h_screenshot.png' -e 'mv $f ~/Pictures/scrot'
+# Open shutter
 bindsym $mod+c exec --no-startup-id shutter
 
 # Open firefox
 bindsym $mod+g --release exec --no-startup-id firefox
 
+# Make Thunderbird open on workspace 10
+assign [class="Thunderbird"] 10
+
+# Make mattermost open on workspace 10
+assign [class="Mattermost"] 10
+
 # Make shutter always float and have a minimum size and always spawn on workspace 1
 for_window [class="Shutter" instance="shutter"] floating enable
 
+# Make Zenmonitor3 always float
+for_window [class="Zenmonitor" instance="zenmonitor"] floating enable
+
 # Float xeyes
-for_window [class="XEyes" instance="xeyes"] floating enable
+#for_window [class="XEyes" instance="xeyes"] floating enable
 
 # Start gnome-keyring
-exec --no-startup-id "gnome-keyring-daemon --start"
-exec --no-startup-id "export SSH_AUTH_SOCK"
+#exec --no-startup-id "gnome-keyring-daemon --start"
+#exec --no-startup-id "export SSH_AUTH_SOCK"
 
 # Set gaps
 gaps inner 10
@@ -47,6 +65,10 @@ exec --no-startup-id exec bash /home/elle/.fehbg
 # Removes borders
 for_window [class="^.*"] border pixel 0
 
+# Colour
+#client.focused #4c7899 #283170 #ffffff #2e9ef4   #285577
+client.focused #4c7899 #5f676a #ffffff #2e9ef4   #285577
+
 ## End of custom config
 
 # i3 config file (v4)
@@ -57,7 +79,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:iosevka 11
+font pango: sans 11
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -224,16 +246,16 @@ bindsym $mod+p mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	font pango:iosevka 12
+	font pango: sans 12.5
         status_command i3status -c /home/elle/.config/i3status/i3status.conf
 	position top
 	i3bar_command i3bar --transparency
 	colors {
-            background #2B272E00
+           background #2B272E00
 
-            focused_workspace     #a9a9a9 #5f676a #eeeeee
-            active_workspace      #a9a9a9 #5f676a #eeeeee
-            inactive_workspace    #a9a9a9 #222222 #a9a9a9
-            urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+           focused_workspace     #a9a9a9 #5f676a #eeeeee
+           active_workspace      #a9a9a9 #5f676a #eeeeee
+           inactive_workspace    #a9a9a9 #222222 #a9a9a9
+           urgent_workspace      #a9a9a9 #d42121 #FFFFFF
 	}
 }

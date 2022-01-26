@@ -111,7 +111,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Iosevka
+    family: monospace
+#	-> ~> !=
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -123,7 +124,7 @@ font:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
 
-    family: Iosevka
+    family: monospace
     # value specified for the normal font.
 
     # The `style` can be specified to pick a specific face.
@@ -135,7 +136,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -146,7 +147,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka
+    family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -179,75 +180,33 @@ font:
 
 # Colors
 colors:
+  # Default colors
   primary:
-    # for hard contrast: #1b1b23
-    # for neutral contrast: #20202a
-    # for soft contrast: #2c2e3e
-    background:        &aquarium_bg '#20202a'
-    foreground:        '#c8cedc'
-    bright_foreground: '#a0a8b6'
-    dim_foreground:    '#4c5664'
+    background: '0x1b182c'
+    foreground: '0xcbe3e7'
 
-  cursor:
-    style: Underline
-    text:   CellBackground
-    cursor: '#ebe3b9'
-
-
-  vi_mode_cursor:
-    text:   CellBackground
-    cursor: '#ebe3b9'
-
-  search:
-    matches:
-      foreground: '#000000'
-      background: '#ffffff'
-
-    focused_match:
-     foreground: CellBackground
-     background: CellForeground
-
-    bar:
-      background: None
-      foreground: None
-
-  line_indicator:
-    foreground: None
-    background: None
-
-  selection:
-    text:       CellBackground
-    background: CellForeground
-
-  bright:
-    black:   '#3b3b4d'
-    red:     '#ebb9b9'
-    green:   '#caf6bb'
-    yellow:  '#ebe3b9'
-    blue:    '#cddbf9'
-    magenta: '#f6bbe7'
-    cyan:    '#b8dceb'
-    white:   '#c8cedc'
-
+  # Normal colors
   normal:
-    black:   '#3b3b4d'
-    red:     '#ebb9b9'
-    green:   '#caf6bb'
-    yellow:  '#ebe3b9'
-    blue:    '#cddbf9'
-    magenta: '#f6bbe7'
-    cyan:    '#b8dceb'
-    white:   '#c8cedc'  
+    black:   '0x100e23'
+    red:     '0xff8080'
+    green:   '0x95ffa4'
+    yellow:  '0xffe9aa'
+    blue:    '0x91ddff'
+    magenta: '0xc991e1'
+    cyan:    '0xaaffe4'
+    white:   '0xcbe3e7'
 
-  dim:
-    black:   '#32302f'
-    red:     '#cc9b9d'
-    green:   '#a3ccad'
-    yellow:  '#d1ba97'
-    blue:    '#076678'
-    magenta: '#c497b3'
-    cyan:    '#86bfbc'
-    white:   '#928374'
+  # Bright colors
+  bright:
+    black:   '0x565575'
+    red:     '0xff5458'
+    green:   '0x62d196'
+    yellow:  '0xffb378'
+    blue:    '0x65b2ff'
+    magenta: '0x906cff'
+    cyan:    '0x63f2f1'
+    white:   '0xa6b3cc'
+
 
   # Indexed Colors
   #
