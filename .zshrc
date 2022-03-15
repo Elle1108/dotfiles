@@ -74,7 +74,7 @@ plugins=(
 	git
 	zsh-autosuggestions
 	sudo
-	copydir
+	copypath
 	zsh-syntax-highlighting
 )
 
@@ -103,16 +103,17 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias gnome="export XDG_SESSION_TYPE=x11 && export GDK_BACKEND=x11 && startx /bin/gnome-session"
+alias xfce="startx /bin/xfce4-session"
+alias i3="startx /bin/i3"
 alias asdf="setxkbmap -layout us -variant dvorak-alt-intl"
 alias xcolour="xcolor"
 alias aoeu="setxkbmap -layout us"
-alias ani="ani-cli"
 alias ifconfig="ip -br -c a"
-alias execute="chmod +x"
 alias py="/bin/python"
 alias vi="vim"
 alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ufw="sudo ufw"
 alias pm="sudo pacman"
-neofetch
+#neofetch

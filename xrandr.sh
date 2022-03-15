@@ -1,4 +1,3 @@
-h
 #If no argument is specified, ask for it and exit
 if [[ -z "$@" ]];
 then
