@@ -8,18 +8,24 @@
 ## Start of custom config
 
 # Startup commands
-exec --no-startup-id "setxkbmap -layout us -variant dvorak-alt-intl"
-exec --no-startup-id "xset -b"
-#exec --no-startup-id "xrandr --output HDMI-1 --mode 2560x1440 --rate 144"
-exec --no-startup-id discord
-exec --no-startup-id firefox
-exec --no-startup-id dunst
-exec --no-startup-id fcitx
-exec --no-startup-id "nvfancontrol -f"
-exec --no-startup-id picom
-exec --no-startup-id mattermost-desktop
-exec --no-startup-id thunderbird
-#exec --no-startup-id blugon -f
+exec --no-startup-id "xrdb ~/.Xresources" 
+exec --no-startup-id "setxkbmap -layout us -variant dvorak"
+#exec --no-startup-id "xset -b"
+#exec --no-startup-id discord
+#exec --no-startup-id xeyes
+exec --no-startup-id "kmonad ~/.kmonad.kbd"
+#exec --no-startup-id firefox
+#exec --no-startup-id dunst
+#exec --no-startup-id fcitx
+#exec --no-startup-id "nvfancontrol -f"
+exec --no-startup-id /bin/picom
+#exec --no-startup-id mattermost-desktop
+#exec --no-startup-id thunderbird
+#exec --no-startup-id blugon -fw
+#exec "xrandr --output HDMI-A-0 --mode 2560x1440 --rate 144"
+
+# Take Screenshot
+bindsym Print exec "import -window root ~/Pictures/Screenshots/Screenshot$(date +%F%H:%M:%S).png"
 
 # Start windows
 bindsym $mod+w exec "sudo virsh start win10"
@@ -30,17 +36,11 @@ bindsym $mod+l exec --no-startup-id fcitx
 # Open discord
 bindsym $mod+backslash --release exec --no-startup-id discord
 
-# Open shutter
-bindsym $mod+c exec --no-startup-id shutter
-
 # Open firefox
 bindsym $mod+g --release exec --no-startup-id firefox
 
 # Make Thunderbird open on workspace 10
-assign [class="Thunderbird"] 10
-
-# Make mattermost open on workspace 10
-assign [class="Mattermost"] 10
+assign [class="thunderbird"] 10
 
 # Make shutter always float and have a minimum size and always spawn on workspace 1
 for_window [class="Shutter" instance="shutter"] floating enable
@@ -49,7 +49,7 @@ for_window [class="Shutter" instance="shutter"] floating enable
 for_window [class="Zenmonitor" instance="zenmonitor"] floating enable
 
 # Float xeyes
-#for_window [class="XEyes" instance="xeyes"] floating enable
+for_window [class="XEyes" instance="xeyes"] floating enable
 
 # Start gnome-keyring
 #exec --no-startup-id "gnome-keyring-daemon --start"
@@ -107,7 +107,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -117,7 +117,7 @@ bindsym $mod+q kill
 # bindsym $mod+e exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 bindsym $mod+e exec --no-startup-id rofi -show drun -show run -opacity "85" 
-#bindsym $mod+e exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
+# bindsym $mod+e exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -256,6 +256,6 @@ bar {
            focused_workspace     #a9a9a9 #5f676a #eeeeee
            active_workspace      #a9a9a9 #5f676a #eeeeee
            inactive_workspace    #a9a9a9 #222222 #a9a9a9
-           urgent_workspace      #a9a9a9 #d42121 #FFFFFF
+           urgent_workspace      #a9a9a9 #222222 #a9a9a9
 	}
 }
