@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/elle/.oh-my-zsh"
+export PATH="/home/elle/.local/bin:/home/elle/.nix-profile/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -60,7 +61,8 @@ COMPLETION_WAITING_DOTS="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="yyyy-mm-dd"
+HIST_STAMPS="%Y-%m-%dT%H:%M:%S%Z"
+#HIST_STAMPS="%s"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -83,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -111,9 +114,22 @@ alias xcolour="xcolor"
 alias aoeu="setxkbmap -layout us"
 alias ifconfig="ip -br -c a"
 alias py="/bin/python"
-alias vi="vim"
+alias vim="vi"
 alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ufw="sudo ufw"
 alias pm="sudo pacman"
-#neofetch
+PROMPT="%F{012}%D{%H:%M:%S} %F{013}%B%n%b %F{011}[%3d] %F{012}> "
+function preexec() {
+  timer=$(($(date +%s%0N)/1000000))
+}
+
+function precmd() {
+  if [ $timer ]; then
+      now=$(($(date +%s%0N)/1000000))
+      elapsed=$(($now-$timer))
+      export RPROMPT="%(?:%F{010}%?:%F{009}%?) %F{cyan}${elapsed}ms"
+      unset timer
+  fi
+			    }
+#RPROMPT="%(?:%F{010}%?:%F{009}%?)"
