@@ -8,29 +8,13 @@
 ## Start of custom config
 
 # Startup commands
-exec --no-startup-id "xrdb ~/.Xresources" 
-exec --no-startup-id "setxkbmap -layout us -variant dvorak"
-#exec --no-startup-id "xset -b"
-#exec --no-startup-id discord
-#exec --no-startup-id xeyes
 exec --no-startup-id "kmonad ~/.config/kmonad/config.kbd"
-#exec --no-startup-id firefox
-#exec --no-startup-id dunst
-#exec --no-startup-id fcitx
-#exec --no-startup-id "nvfancontrol -f"
+exec --no-startup-id redshift -O 4500
 exec --no-startup-id /bin/picom
-#exec --no-startup-id mattermost-desktop
-#exec --no-startup-id thunderbird
-#exec --no-startup-id blugon -fw
-#exec --no-startup-id "redshift -O 4500"
-#exec "xrandr --output HDMI-A-0 --mode 2560x1440 --rate 144"
-exec --no-startup-id sleep 1 && dvm run c"
+exec --no-startup-id sleep 1 && dvm run c
 
 # Take Screenshot
 bindsym Print exec "import -window root ~/Pictures/Screenshots/Screenshot$(date +%F%H:%M:%S).png"
-
-# Start windows
-#bindsym $mod+w exec "sudo virsh start win10"
 
 # Open fcitx
 bindsym $mod+l exec --no-startup-id fcitx
@@ -53,10 +37,6 @@ for_window [class="Zenmonitor" instance="zenmonitor"] floating enable
 # Float xeyes
 for_window [class="XEyes" instance="xeyes"] floating enable
 
-# Start gnome-keyring
-#exec --no-startup-id "gnome-keyring-daemon --start"
-#exec --no-startup-id "export SSH_AUTH_SOCK"
-
 # Set gaps
 gaps inner 10
 gaps outer 7
@@ -68,7 +48,6 @@ exec --no-startup-id exec bash /home/elle/.fehbg
 for_window [class="^.*"] border pixel 0
 
 # Colour
-#client.focused #4c7899 #283170 #ffffff #2e9ef4   #285577
 client.focused #4c7899 #5f676a #ffffff #2e9ef4   #285577
 
 ## End of custom config
